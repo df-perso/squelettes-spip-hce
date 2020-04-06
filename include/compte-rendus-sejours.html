@@ -1,0 +1,17 @@
+<section id="sommaire_compte_rendus_sejours" class="my-3">
+<div class="container" id="sommaire_compte_rendus_sejours_container">
+<h1>Récits des séjours 2019</h1>
+<hr class="divider">
+<B_articles>
+<div class="row my-3" id="comtpe_rendu_sejours">
+    [(#REM) La constante HCE_MOT_CLE_SEJOURS est définie dans config/mes_options.php]
+	<BOUCLE_articles(ARTICLES) {!par date} {titre_mot=#CONST{HCE_MOT_CLE_SEJOURS}} {pagination 6}>
+		<div class="col-lg-4 col-md-6 col-sm-12 my-2">
+		<INCLURE{fond=include/article-card, id_article} />
+		</div>
+	</BOUCLE_articles>	
+</div><!--#articles_recents-->
+<button type="button" class="btn btn-primary btn-block" onclick="ShowMore(this)" data-start="0" data-length="6" data-total="#GRAND_TOTAL" data-target-selector="#comtpe_rendu_sejours" data-page="ajax/compte-rendus-sejours"><span><i class="fas fa-fw fa-arrow-right"></i>Voir plus de compte-rendus</span></button>
+</B_articles>
+</div><!-- #sommaire_compte_rendus_sejours_container -->
+</section> <!-- #sommaire_compte_rendus_sejours -->

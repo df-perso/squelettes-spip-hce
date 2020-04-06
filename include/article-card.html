@@ -1,0 +1,14 @@
+<BOUCLE_articles(ARTICLES) {id_article}>
+<div class="card shadow">
+	<BOUCLE_image(DOCUMENTS) {id_article} {0,1} {extension==jpg|png|gif}>
+	<div class="card-img-top"><a href="#URL_ARTICLE"><img src="#URL_DOCUMENT"></a></div>
+	</BOUCLE_image>
+	<div class="card-body">
+	<h5 class="card-title">#TITRE</h5>
+	<div class="font-weight-light">
+	[(#DATE|affdate_court)] <BOUCLE_rubrik(RUBRIQUES) {id_rubrique=#ID_RUBRIQUE}><a href="#URL_RUBRIQUE" class="badge badge-dark float-right">#TITRE</a></BOUCLE_rubrik>
+    </div>
+	[<p class="card-text">(#INTRODUCTION|couper{120, '...'}) <a href="#URL_ARTICLE" class="badge badge-info" title="Lire la suite de l'article">Suite...</a></p>]
+	</div>
+</div>
+</BOUCLE_articles>

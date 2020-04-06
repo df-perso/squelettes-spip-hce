@@ -1,0 +1,72 @@
+<!doctype html>
+<html dir="#LANG_DIR" lang="#LANG">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>[(#NOM_SITE_SPIP|textebrut)][ - (#SLOGAN_SITE_SPIP|textebrut)]</title>
+	[<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|couper{150}|attribut_html)" />]
+	<INCLURE{fond=include/css} />
+ 	<INCLURE{fond=include/header-scripts} />
+  </head>
+  <body>
+		<INCLURE{fond=include/barre-contact} />
+		<INCLURE{fond=include/menu} />
+		<INCLURE{fond=include/carousel} />
+		
+		<section id="plan" class="my-3">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+					<h1>Plan du site</h1>
+					<hr class="divider">
+					<BOUCLE_secteurs(RUBRIQUES) {racine} {par num titre}{!par date}>
+					
+					<h2>#TITRE</h2>
+					
+					[(#REM) Articles et sous-rubriques ]
+					<B_articles_racine>
+					<ul class="spip">
+						<BOUCLE_articles_racine(ARTICLES) {id_rubrique} {par num titre}{!par date}>
+						<li><a href="#URL_ARTICLE">#TITRE</a></li>
+						</BOUCLE_articles_racine>
+					</ul>
+					</B_articles_racine>
+					
+					<B_rubriques>
+					<ul class="spip">
+						<BOUCLE_rubriques(RUBRIQUES) {id_parent} {par num titre}{!par date}>
+						<li>
+							<strong><a href="#URL_RUBRIQUE">#TITRE</a></strong>
+							
+							<B_articles>
+							<ul class="spip">
+								<BOUCLE_articles(ARTICLES) {id_rubrique} {par num titre}{!par date}>
+								<li><a href="#URL_ARTICLE">#TITRE</a></li>
+								</BOUCLE_articles>
+							</ul>
+							</B_articles>
+						</li>
+						</BOUCLE_rubriques>
+					</ul>
+					</B_rubriques>
+					
+					[(#REM) Breves ]
+					<B_breves>
+					<h3><:breves:breves:></h3>
+					<ul class="spip">
+						<BOUCLE_breves(BREVES) {id_rubrique} {!par date}>
+						<li><a href="#URL_BREVE">#TITRE</a></li>
+						</BOUCLE_breves>
+					</ul>
+					</B_breves>
+					
+					</BOUCLE_secteurs>
+					</div>
+				</div>
+			</div>
+		</section>
+		<INCLURE{fond=include/footer} />
+    	<INCLURE{fond=include/scripts} />
+  </body>
+</html>

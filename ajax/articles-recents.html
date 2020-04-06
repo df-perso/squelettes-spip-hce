@@ -1,0 +1,7 @@
+<B_articles>
+	<BOUCLE_articles(ARTICLES) {!par date} {#ENV{start}, #ENV{length}}>
+		<div class="col-lg-4 col-md-6 col-sm-12 my-2">
+		<INCLURE{fond=include/article-card, id_article} />
+		</div>
+	</BOUCLE_articles>																																										
+</B_articles>

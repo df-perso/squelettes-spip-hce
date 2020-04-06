@@ -1,0 +1,59 @@
+<section id="footer_section" class="dark-background py-3">
+<div class="container" id="footer_container">
+	<div class="row">
+		<div class="col-md-3 mb-3">
+			<a href="#URL_SITE_SPIP"><img class="logo-hce" src="#CHEMIN{images/logo-hce.svg}"></a>
+		</div>
+		<div class="col-md-3">
+			<ul class="list-unstyled"><h3>A propos de HCE</h3>
+			<BOUCLE_nav(RUBRIQUES) {racine} {par num titre, titre}>
+			<li><a href="#URL_RUBRIQUE">#TITRE</a></li>
+			</BOUCLE_nav>
+			</ul>	
+		</div>
+		<div class="col-md-3">
+			<ul class="list-unstyled"><h3>Nous contacter</h3>
+				<li>
+					<address>
+						<strong>Handi Cap Evasion</strong><br>
+						32 chemin de la Creuzette<br>
+						69270 Fontaines sur Saône
+					</address>
+				</li>
+				<li><a href="mailto:hce@free.fr"><i class="fas fa-envelope-open"></i> hce@free.fr</a></li>
+				<li><a href="tel:+33478227102"><i class="fas fa-phone-alt"></i> 04 78 22 71 02</a></li>
+				<li>
+					<a href="https://www.facebook.com/HandiCapEvasion" title="Retrouvez-nous sur Facebook"><i class="fab fa-facebook-square"></i></a>
+					<a href="https://twitter.com/HandiCapEvasion" title="Suivez-nous sur Twitter"><i class="fab fa-twitter"></i></a>
+					<a href="https://www.youtube.com/user/HandiCapEvasion" title="Tous les films Handi Cap Evasion sur YouTube"><i class="fab fa-youtube"></i></a>
+				</li>
+			</ul>	
+		</div>
+	</div>
+</div> <!-- #footer_container -->
+</section>
+<a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top shadow" role="button" title="Haut de page"><i class="fas fa-chevron-up"></i></a>
+<script>
+ScrollReveal().reveal('#sommaire_engagement', { duration: 3000});
+$(document).ready(function() {
+	$(window).scroll(function () {
+			if ($(this).scrollTop() > 50) {
+				$('#back-to-top').fadeIn();
+			} else {
+				$('#back-to-top').fadeOut();
+			}
+			if ($(this).scrollTop() > 100) {
+				$('#barre_contact').slideUp();
+			} else {
+				$('#barre_contact').slideDown();
+			}
+		});
+		// scroll body to 0px on click
+		$('#back-to-top').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 400);
+			return false;
+		});
+});
+</script>

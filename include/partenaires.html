@@ -1,0 +1,52 @@
+<section id="partenaires_section">
+<div class="container" id="partenaires_container">
+<h1>Nos partenaires</h1>
+<hr class="divider">
+<div id="partenaires_slider" class="my-3">
+<BOUCLE_partenaires(RUBRIQUES) {id_rubrique=20}>
+	<BOUCLE_partenaires_articles(ARTICLES) {id_rubrique}>
+		<BOUCLE_partenaires_images(DOCUMENTS) {id_article}>
+			    <div><div class="logo-valigner"><img src="#URL_DOCUMENT" alt="logo-partenaire" class="logo-partenaire"></div></div>
+		</BOUCLE_partenaires_images>
+	</BOUCLE_partenaires_articles>
+</BOUCLE_partenaires>
+</div><!-- #partenaires_slider -->
+</div><!-- #partenaires_container -->
+</section>
+<script>
+$(document).ready(function() {
+	$('#partenaires_slider').slick({
+		  infinite: true,
+		  slidesToShow: 4,
+		  slidesToScroll: 2,
+		  arrows: false,
+		  autoplay: true,
+		  autoplaySpeed: 2000,
+		  dots: false,
+		  responsive: [
+			    {
+			      breakpoint: 1024,
+			      settings: {
+			        slidesToShow: 5,
+			        slidesToScroll: 3,
+			        infinite: true
+			      }
+			    },
+			    {
+			      breakpoint: 600,
+			      settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 480,
+			      settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    }
+			]
+	});
+});
+</script>

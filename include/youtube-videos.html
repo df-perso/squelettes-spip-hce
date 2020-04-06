@@ -1,0 +1,31 @@
+<section id="videos_section">
+	<div id="videos_container" class="container">
+		<h1>HCE en images...</h1>
+		<hr class="divider">
+		<div id="videos_container_slider">
+		<?php require_once('#DOSSIER_SQUELETTE/../php/youtube-videos.php'); ?>
+		</div>
+	</div>
+</section>
+<script>
+$(document).ready(function() {
+	$('#videos_container_slider').slick({
+		  infinite: true,
+		  slidesToShow: 2,
+		  slidesToScroll: 1,
+		  arrows: false,
+		  autoplay: true,
+		  autoplaySpeed: 2000,
+		  dots: false,
+		  responsive: [
+			    {
+			      breakpoint: 600,
+			      settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    }
+			]
+	});
+});
+</script>
