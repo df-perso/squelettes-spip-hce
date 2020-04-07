@@ -36,6 +36,9 @@
 <script>
 ScrollReveal().reveal('#sommaire_engagement', { duration: 3000});
 $(document).ready(function() {
+	window.iBarreContactHeight = $('#barre_contact').height();
+	window.iContactSlideUp = null;
+	window.iContactSlideDown = null;
 	$(window).scroll(function () {
 			if ($(this).scrollTop() > 50) {
 				$('#back-to-top').fadeIn();
@@ -43,9 +46,17 @@ $(document).ready(function() {
 				$('#back-to-top').fadeOut();
 			}
 			if ($(this).scrollTop() > 100) {
-				$('#barre_contact').slideUp();
+				if (window.iContactSlideUp !== null)
+				{
+					clearTimeout(window.iContactSlideUp);
+				}
+				window.iContactSlideUp = setTimeout(function() { $('#barre_contact').css('height', 0); }, 200);
 			} else {
-				$('#barre_contact').slideDown();
+				if (window.iContactSlideDown !== null)
+				{
+					clearTimeout(window.iContactSlideDown);
+				}
+				window.iContactSlideDown = setTimeout(function() { $('#barre_contact').css('height', window.iBarreContactHeight);  }, 200);
 			}
 		});
 		// scroll body to 0px on click
