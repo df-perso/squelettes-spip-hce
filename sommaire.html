@@ -21,11 +21,11 @@
 		<div class="row my-3" id="articles_recents">
 			<BOUCLE_articles(ARTICLES) {!par date} {pagination 6}>
 				<div class="col-lg-4 col-md-6 col-sm-12 my-2">
-				<INCLURE{fond=include/article-card, id_article} />
+				<INCLURE{fond=include/article-card, id_article, show_rubrique=show} />
 				</div>
 			</BOUCLE_articles>																																										
 		</div>
-		<button type="button" class="btn btn-primary btn-block" onclick="ShowMore(this)" data-start="0" data-length="6" data-total="#GRAND_TOTAL" data-target-selector="#articles_recents" data-page="ajax/articles-recents"><span><i class="fas fa-fw fa-arrow-right"></i>Voir plus d'articles</span></button>
+		<button type="button" class="btn btn-primary btn-block" onclick="ShowMore(this)" data-start="0" data-length="6" data-total="#GRAND_TOTAL" data-target-selector="#articles_recents" data-page="ajax-articles-recents"><span><i class="fas fa-fw fa-arrow-right"></i>Voir plus d'articles</span></button>
 		</B_articles>
 		</div>
 		</section>

@@ -3,8 +3,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="#CHEMIN{js/lity.min.js}"></script>
 <script>
-function ShowMore(element)
+function ShowMore(element, oExtra)
 {
 	var start = parseInt($(element).attr('data-start'), 10);
 	var length = parseInt($(element).attr('data-length'), 10);
@@ -17,7 +18,14 @@ function ShowMore(element)
 	var oDate = new Date();
 	var timestamp = oDate.getTime() / 1000;
 	var bEndReached = (start + length) >= total;
-	$.get('./spip.php?page='+page+'&t='+timestamp, {start: start, length: length}, function(html) {
+	if (oExtra == undefined)
+	{
+		oExtra = {};
+	}
+	oExtra.start = start;
+	oExtra.length = length;
+	oExtra.var_mode ='recalcul';
+	$.get('./spip.php?page='+page+'&t='+timestamp, oExtra, function(html) {
 		$(target_selector).append(html);
 		$(me).attr('data-start', start);
 		if (bEndReached)
@@ -30,4 +38,7 @@ function ShowMore(element)
 		}
 	});
 }
+$(function() {
+	$(document).on('click', '[data-lity]', function() { $('#videos_container_slider').slick('slickPause') });
+});
 </script>

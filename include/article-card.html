@@ -6,7 +6,7 @@
 	<div class="card-body">
 	<h5 class="card-title">#TITRE</h5>
 	<div class="font-weight-light">
-	[(#DATE|affdate_court)] <BOUCLE_rubrik(RUBRIQUES) {id_rubrique=#ID_RUBRIQUE}><a href="#URL_RUBRIQUE" class="badge badge-dark float-right">#TITRE</a></BOUCLE_rubrik>
+	[(#DATE|affdate_court)] <BOUCLE_rubrik(RUBRIQUES) {si #ENV{show_rubrique}|=={show}} {id_rubrique=#ID_RUBRIQUE}><a href="#URL_RUBRIQUE" class="badge badge-dark float-right">#TITRE</a></BOUCLE_rubrik>
     </div>
 	[<p class="card-text">(#INTRODUCTION|couper{120, '...'}) <a href="#URL_ARTICLE" class="badge badge-info" title="Lire la suite de l'article">Suite...</a></p>]
 	</div>

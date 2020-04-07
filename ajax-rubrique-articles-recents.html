@@ -1,0 +1,12 @@
+[(#REM)
+Pour charger plus d'articles via un appel Ajax
+NOTE: si le chemin vers ce squelette contient un / (ex. ajax/articles-recents.html) alors l'appel
+ne fonctionnera que pour les utilisateurs connectés (c'est assimilé à un appel à l'espace privé!)
+]
+<B_articles>
+	<BOUCLE_articles(ARTICLES) {!par date} {id_rubrique} {#ENV{start}, #ENV{length}}>
+		<div class="col-lg-4 col-md-6 col-sm-12 my-2">
+		<INCLURE{fond=include/article-card, id_article} />
+		</div>
+	</BOUCLE_articles>																																										
+</B_articles>

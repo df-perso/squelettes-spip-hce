@@ -35,12 +35,12 @@ for ($i = 0; $i < MAX_RESULTS; $i++)
             break;
         }
     }
-	    //echo '<iframe id="iframe" style="width:100%;height:100%" src="//www.youtube.com/embed/'.$videoId.'" data-autoplay-src="//www.youtube.com/embed/'.$videoId.'?autoplay=1"></iframe>';                  
-        echo '<div class="video-youtube-button" title="Cliquez pour lancer la vidéo"><span class="fa-stack fa-2x"><i class="fab fa-youtube fa-stack-2x"></i><i class="fa fa-play fa-stack-1x" style="color: #fff"></i></span></div>';
+	//echo '<iframe id="iframe" style="width:100%;height:100%" src="//www.youtube.com/embed/'.$videoId.'" data-autoplay-src="//www.youtube.com/embed/'.$videoId.'?autoplay=1"></iframe>';                  
+    echo '<div class="video-youtube-button" data-lity href="//www.youtube.com/embed/'.$videoId.'" title="Cliquez pour lancer la vidéo"><span class="fa-stack fa-2x"><i class="fab fa-youtube fa-stack-2x"></i><i class="fa fa-play fa-stack-1x" style="color: #fff"></i></span></div>';
     echo '</div>'; 
     echo '<div class="video-info">';
-	    echo '<div class="video-title">'.$title.'</div>';
-        echo '<div class="video-description"'.$description.'</div>';
+	echo '<div class="video-title">'.$title.'</div>';
+    echo '<div class="video-description"'.$description.'</div>';
     echo '</div>';
     echo '</div>';
     echo '</div>';
