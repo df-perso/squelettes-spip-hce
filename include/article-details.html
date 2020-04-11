@@ -1,7 +1,42 @@
 <BOUCLE_articles(ARTICLES) {id_article}>
-	<h5>#TITRE</h5>
+	<h2>#TITRE</h2>
+	<div class="font-weight-light">
+	<BOUCLE_rubrik(RUBRIQUES) {si #ENV{show_rubrique}|=={show}} {id_rubrique=#ID_RUBRIQUE}>
+	[(#DATE|affdate_court)] <a href="#URL_RUBRIQUE" class="badge badge-dark float-right">#TITRE</a>
+	<hr class="spacer"/>
+	</BOUCLE_rubrik>
+    </div>
+	
 		[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{672,*})</div>]
 		[<div class="#EDIT{texte} texte surlignable clearfix">(#TEXTE|image_reduire{672,*})</div>]
-	</div>
-</div>
+		[<div class="footnotes">(#NOTES)</div>]
+		
+		<div class="row">
+		<B_mp3>
+			<BOUCLE_mp3(DOCUMENTS) {id_article} {extension==mp3} {doublons}>
+			 <div class="col-md-4 col-sm-6 text-center">
+				 <audio controls preload="auto">
+				  <source src="[(#URL_DOCUMENT|abs_url)]" type="audio/mpeg">
+				  Désolé votre navigateur antédiluvien ne supporte pas le tag AUDIO.
+				</audio>
+			</div>
+			</BOUCLE_mp3>
+		</B_mp3>
+		<B_photos>
+			<BOUCLE_photos(DOCUMENTS) {id_article} {extension==jpg|png|gif} {doublons}>
+				<div class="col-md-4 col-sm-6 text-center">
+				<a href="[(#URL_DOCUMENT|abs_url)]">[(#FICHIER|image_reduire{100})]</a>
+				</div>
+			</BOUCLE_photos>
+		</B_photos>
+		<B_documents>
+			<div class="item">
+			<BOUCLE_documents(DOCUMENTS) {id_article} {doublons}>
+			<div class="col-md-4 col-sm-6 text-center">
+			<a href="[(#URL_DOCUMENT|abs_url)]">[(#LOGO_DOCUMENT)]<br/>#TITRE ([(#TAILLE|taille_en_octets)])</a>
+			</div>
+			</BOUCLE_documents>
+			</div>
+		</B_documents>
+		</div>
 </BOUCLE_articles>

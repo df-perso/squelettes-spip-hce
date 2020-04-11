@@ -33,6 +33,9 @@ a.badge, a.badge:hover, a.badge:visited {
 	width: 5rem;
 	margin-bottom: 2rem;
 }
+#navigation-spacer {
+	margin-top:8rem;
+}
 #carousel_section {
 	margin-top: 7rem;
 }
@@ -108,6 +111,9 @@ a.badge, a.badge:hover, a.badge:visited {
 #sommaire_engagement {
 	padding: 2rem;
 }
+#sommaire_engagement a:hover {
+	text-decoration: none;
+}
 
 .logo-valigner {
 	height: 10rem;
@@ -127,6 +133,9 @@ dl.spip_documents {
 	text-align: center;
 	margin: 2rem;
 }
+dl.spip_documents_center dt {
+	margin: auto;
+}
 span.spip_documents {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
@@ -135,8 +144,15 @@ span.spip_documents {
 	text-align: center;
 }
 span.spip_documents img {
-	width: 100%;
+	max-width: 100%;
 	height: auto;
+}
+.chapo {
+	background-color: #eee;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	padding-top: 1rem;
+	padding-bottom: 0.01rem; /* because paragraphs have 1rem margin bottom */
 }
 /***************** scroll to top button *******/
 .back-to-top {

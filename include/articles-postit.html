@@ -1,0 +1,13 @@
+<section id="articles_postit">
+<div class="container" id="articles_postit_container">
+<BOUCLE_postit(MOTS) {titre=PostIt}>
+	<BOUCLE_articles_postit(ARTICLES) {id_rubrique} {id_mot}>
+		<div class="row my-3">
+			<div class="col">
+			<INCLURE{fond=include/article-details} {id_article}>
+			</div>
+		</div>
+	</BOUCLE_articles_postit>
+</BOUCLE_postit>
+</div>
+</section>

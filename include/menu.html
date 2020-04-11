@@ -1,3 +1,5 @@
+#SET{rubrique_labels, #ARRAY{2,"Présentation de Handi Cap Evasion", 7, "Tous les reportages", 23, "Les nouveaux projets"}}
+
 <section id="menu_section">
 <div class="container" id="menu_container">
 <nav class="navbar navbar-expand-lg">
@@ -12,7 +14,7 @@
 		<li class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#TITRE</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="#URL_RUBRIQUE">En savoir plus...</a>
+				<a class="dropdown-item" href="#URL_RUBRIQUE">[(#GET{rubrique_labels}|table_valeur{#ID_RUBRIQUE})]</a>
 	   	<BOUCLE_subnav(RUBRIQUES) {id_parent} {par num titre, titre}>
 				<a class="dropdown-item" href="#URL_RUBRIQUE">#TITRE</a>
 		</BOUCLE_subnav>

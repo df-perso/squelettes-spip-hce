@@ -1,6 +1,6 @@
 <?php
 define('MAX_RESULTS', 12);
-$apikey = 'AIzaSyAg5sVSU6sF0jz6NjRKI7fnCuuOQvq2U4I'; 
+$apikey = YOUTUBE_API_KEY; 
 $googleApiUrl = 'https://www.googleapis.com/youtube/v3/playlistItems/?part=snippet,contentDetails&playlistId=PLmzLxX_KxljFx1cCaSsa8c3OEpYPWHEE8&maxResults='.MAX_RESULTS.'&key='.$apikey;
 
 $ch = curl_init();
