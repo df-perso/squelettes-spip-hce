@@ -1,12 +1,16 @@
 <BOUCLE_articles(ARTICLES) {id_article}>
 <div class="card shadow">
-	<B_image>
+	<B_image_poster>
+	<BOUCLE_image_poster(DOCUMENTS) {id_article} {0,1} {titre=poster}>
+	<div class="card-img-top"><a href="#URL_ARTICLE"><img src="#URL_DOCUMENT"></a></div>
+	</BOUCLE_image_poster>
 	<BOUCLE_image(DOCUMENTS) {id_article} {0,1} {extension==jpg|png|gif}>
 	<div class="card-img-top"><a href="#URL_ARTICLE"><img src="#URL_DOCUMENT"></a></div>
 	</BOUCLE_image>
 	</B_image>
 	<div class="card-img-top"><a href="#URL_ARTICLE"><img src="[(#LOGO_RUBRIQUE|extraire_attribut{src})]"></a></div>
 	<//B_image>
+	<//B_image_poster>
 	<div class="card-body">
 	<h5 class="card-title">#TITRE</h5>
 	<div class="font-weight-light">
