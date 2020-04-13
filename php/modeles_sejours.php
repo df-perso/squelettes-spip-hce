@@ -114,7 +114,7 @@ function TableauDesSejoursMiseAJour()
     try
     {
         $sDate = DBService::GetLatestOpenSeatsUpdate();
-        echo DBService::FormatDate($sDate);
+        echo DBService::FormatDateTime($sDate);
     }
     catch (Exception $e)
     {
