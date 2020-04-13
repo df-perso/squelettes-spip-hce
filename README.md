@@ -14,6 +14,13 @@ En plus du contenu issu de SPIP deux sections purement statiques (càd codées d
 **La saisie des informations relatives aux séjour s'effectue désormais dans un seul endroit: iTop**. De nouveaux champs ont été rajoutés sur l'objet "**Séjour**" pour permettre la génération automatique du tableau des séjours:
   * **Type** : le type de séjour (Itinérant, En étoile...). Ce champ est un liste figée, car chaque valeur doit avoir son pictogramme correspondant sur le site web.
   * **Tarif** : le code du tarif pour ce séjour (A, B, C...). Ce champ est un texte libre car la codification des tarifs varie quelque peu d'une année sur l'autre.
+  
+### "Vignettes" des articles
+
+Les "vignettes" représentant les articles dans la page d'accueil (ou dans certaines rubriques) affichent le descriptif de l'article ainsi qu'une image "poster". Cette image est: 
+  - La première image associée à l'article dont le titre est "poster" (si elle existe),
+  - A défaut la première image associée à l'article,
+  - A défaut le logo associé à la rubrique.
 
 ### Modèles pour l'affichage des séjours
 
@@ -32,16 +39,16 @@ Les modèles disponibles sont les suivants:
 #### Configuration dans iTop
 
 La publication de la liste des séjours est configurée dans iTop par de nouveaux champs ajoutés sur l'objet "**Saison**":
-  * **Publication des séjours** : date (et heure précise) à laquelle la liste des séjours de la saison doit apparaître sur le site web
+  * **Publication des séjours** : date (et heure précise) à laquelle la liste des séjours de la saison doit apparaître sur le site web.
   * **Ouverture des inscriptions (P.J.)** : Date à laquelle les passagers joëlette pourront commencer à s'inscire aux séjours (cf `<ouverture_des_inscriptions|>` ci-dessus).
   * **Ouverture des inscriptions (A.A.)** : Date à laquelle les accompagnateurs actifs pourront commencer à s'inscire aux séjours (cf `<ouverture_des_inscriptions|>` ci-dessus).
-  * **Carte des séjours (URL)**: URL permettant d'afficher la carte interactive des séjours (cf `<carte_des_sejours|>` ci-dessus)
+  * **Carte des séjours (URL)**: URL permettant d'afficher la carte interactive des séjours (cf `<carte_des_sejours|>` ci-dessus).
 
 #### Mise à jour des places disponibles
 
 La mise à jour des places disponibles s'effectue désormais directement dans iTop, via le **menu "Places Disponibles"**. 
 
-## Configuration
+## Configuration des squelettes
 
 Le code des squelettes est public (ici même sur Git) mais certains paramètres doivent rester confidentiels ou être aisément configurables. Ces paramètres ont été regroupés dans le fichier `config/mes_options.php` (à créer s'il n'existe pas dans votre instance de SPIP).
 
