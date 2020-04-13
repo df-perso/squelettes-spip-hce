@@ -98,7 +98,7 @@ SQL;
         $idSeason = static::GetActiveSeasonId();
         $sSQL =
 <<<SQL
-SELECT Sj.id, Sj.nom, Sj.date_debut, Sj.date_fin, Sj.url_fiche_technique, Sa.nom AS annee, 'etoile' as type, 'B' as tarif
+SELECT Sj.id, Sj.nom, Sj.date_debut, Sj.date_fin, Sj.url_fiche_technique, Sa.nom AS annee, type, tarif
 FROM {$sPrefix}sejours AS Sj
 JOIN {$sPrefix}saisons AS Sa ON Sj.saison_id=Sa.id
 WHERE Sa.id={$idSeason}
