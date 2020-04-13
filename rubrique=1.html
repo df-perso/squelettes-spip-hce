@@ -1,0 +1,53 @@
+<!doctype html>
+<html dir="#LANG_DIR" lang="#LANG">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>[(#NOM_SITE_SPIP|textebrut)][ - (#SLOGAN_SITE_SPIP|textebrut)]</title>
+	[<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|couper{150}|attribut_html)" />]
+	<INCLURE{fond=include/css} />
+ 	<INCLURE{fond=include/header-scripts} />
+  </head>
+  <body>
+		<INCLURE{fond=include/navigation} />
+		<INCLURE{fond=include/carousel} />
+		<INCLURE{fond=include/breves} {id_rubrique=1} />
+		
+		<section id="sommaire_articles_recents" class="my-3">
+		<div class="container">
+		<h1>En ce moment</h1>
+		<hr class="divider">																																																											
+		<B_articles>
+		<div class="row my-3" id="articles_recents">
+			<BOUCLE_articles(ARTICLES) {!par date} {pagination 6}>
+				<div class="col-lg-4 col-md-6 col-sm-12 my-2">
+				<INCLURE{fond=include/article-card, id_article, show_rubrique=show} />
+				</div>
+			</BOUCLE_articles>																																										
+		</div>
+		<button type="button" class="btn btn-primary btn-block" onclick="ShowMore(this)" data-start="0" data-length="6" data-total="#GRAND_TOTAL" data-target-selector="#articles_recents" data-page="ajax-articles-recents"><span><i class="fas fa-fw fa-arrow-right"></i>Voir plus d'articles</span></button>
+		</B_articles>
+		</div>
+		</section>
+		
+		<INCLURE{fond=include/youtube-videos} />	
+		<INCLURE{fond=include/engagement} />		
+		<INCLURE{fond=include/compte-rendus-sejours} />
+
+		<section id="sommaire_article_details" class="my-5">
+			<div class="container">
+			<h1>A propos de Handi Cap Evasion</h1>
+			<hr class="divider">
+			<div class="row my-3">
+				<div class="col">
+					<INCLURE{fond=include/article-details, id_article=6} /><!--  présentation de HCE -->
+				</div>
+			</div>
+		</section> <!-- #sommaire_article_details -->
+		
+		<INCLURE{fond=include/partenaires} />
+		<INCLURE{fond=include/footer} />
+    	<INCLURE{fond=include/scripts} />
+  </body>
+</html>
