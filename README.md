@@ -22,6 +22,11 @@ Les "vignettes" représentant les articles dans la page d'accueil (ou dans certa
   - A défaut la première image associée à l'article,
   - A défaut le logo associé à la rubrique.
 
+### Brêves affichées sous forme d'alertes
+
+Dans cette nouvelle version du site web, les "brêves" associées à une rubrique sont affichées sous forme d'alertes en tête de la page de la rubrique. Un champ a été ajouté sur l'objet "Brêve" pour choisir la couleur de l'encart d'alerte (cf [Alertes Boostrap](https://getbootstrap.com/docs/4.4/components/alerts/)).
+
+
 ### Modèles pour l'affichage des séjours
 
 Les informations dynamiques de la page séjour (tableau des séjours, date de mise à jour des places restantes...) sont affichées via l'utilisation de *modèles* inclus dans des articles épinglés en tête de rubrique. Le contenu des ces articles reste éditable, comme n'importe quel autre article, mais certaines parties deviennent dynamiques.
