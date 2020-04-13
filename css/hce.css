@@ -154,6 +154,11 @@ span.spip_documents img {
 	padding-top: 1rem;
 	padding-bottom: 0.01rem; /* because paragraphs have 1rem margin bottom */
 }
+.plan-date {
+	font-size: 0.8rem;
+	opacity: 0.5;
+	margin-left: 0.3rem;
+}
 /***************** scroll to top button *******/
 .back-to-top {
     position: fixed;

@@ -28,7 +28,7 @@
 					<B_articles_racine>
 					<ul class="spip">
 						<BOUCLE_articles_racine(ARTICLES) {id_rubrique} {par num titre}{!par date}>
-						<li><a href="#URL_ARTICLE">#TITRE</a></li>
+						<li><a href="#URL_ARTICLE">#TITRE</a> <span class="plan-date">([(#DATE|affdate)])</span></li>
 						</BOUCLE_articles_racine>
 					</ul>
 					</B_articles_racine>
@@ -42,7 +42,7 @@
 							<B_articles>
 							<ul class="spip">
 								<BOUCLE_articles(ARTICLES) {id_rubrique} {par num titre}{!par date}>
-								<li><a href="#URL_ARTICLE">#TITRE</a></li>
+								<li><a href="#URL_ARTICLE">#TITRE</a> <span class="plan-date">([(#DATE|affdate)])</span></li>
 								</BOUCLE_articles>
 							</ul>
 							</B_articles>
@@ -56,7 +56,7 @@
 					<h3><:breves:breves:></h3>
 					<ul class="spip">
 						<BOUCLE_breves(BREVES) {id_rubrique} {!par date}>
-						<li><a href="#URL_BREVE">#TITRE</a></li>
+						<li><a href="#URL_BREVE">#TITRE</a> <span class="plan-date">([(#DATE|affdate)])</span></li>
 						</BOUCLE_breves>
 					</ul>
 					</B_breves>
