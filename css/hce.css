@@ -159,6 +159,9 @@ span.spip_documents img {
 	opacity: 0.5;
 	margin-left: 0.3rem;
 }
+.alert .h5 {
+	font-weight: bold;
+}
 /***************** scroll to top button *******/
 .back-to-top {
     position: fixed;
