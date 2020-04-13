@@ -54,9 +54,9 @@ function TableauDesSejours()
 <thead class="thead-dark">
 <tr>
     <th title="Type et nom du séjour" colspan="2">Nom du séjour</th>
-    <th title="Places disponibles pour les passagers joëlette" class="text-center">Joël.</th>
-    <th title="Places disponibles pour les accompagnateurs actifs" class="text-center">Acc.</th>
-    <th title="Places disponibles pour les handicpaés marchants" class="text-center">H.M.</th>
+    <th title="Places restantes pour les passagers joëlette" class="text-center">Joël.</th>
+    <th title="Places restantes pour les accompagnateurs actifs" class="text-center">Acc.</th>
+    <th title="Places restante pour les handicapés marchants" class="text-center">H.M.</th>
     <th title="Dates du séjour">Dates</th>
     <th title="Tarif du séjour" class="text-center">Tarif</th>
 </tr>
