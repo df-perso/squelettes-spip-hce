@@ -1,7 +1,7 @@
 <section id="articles_postit">
 <div class="container" id="articles_postit_container">
 <BOUCLE_postit(MOTS) {titre=PostIt}>
-	<BOUCLE_articles_postit(ARTICLES) {id_rubrique} {id_mot}>
+	<BOUCLE_articles_postit(ARTICLES) {id_rubrique} {id_mot} {par date} {inverse}>
 		<div class="row my-3">
 			<div class="col">
 			<INCLURE{fond=include/article-details} {id_article}>
