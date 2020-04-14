@@ -76,19 +76,28 @@ a.badge, a.badge:hover, a.badge:visited {
 
 
 #videos_section {
-	height: 28em;
+	height: 18em;
 	overflow: hidden;
 }
 .video-div {
-	width: 30rem;	
-	height: 20rem;
-	background-color: #000;
+	height: 10rem;
+	background-color: #fff;
 	color: #fff;
+	padding-right: 1rem;
+	padding-left: 1rem;
 	position: relative;
 	overflow: hidden;
 	margin-left: auto;
 	margin-right: auto;
 	cursor: pointer;
+}
+@media (min-width: 768px) {
+  .video-div {
+    height: 20rem;
+  }
+  #videos_section {
+	height: 28rem;
+  }
 }
 .video-div img {
 	width: 100%;
