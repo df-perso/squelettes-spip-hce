@@ -1,0 +1,40 @@
+<!doctype html>
+<html dir="#LANG_DIR" lang="#LANG">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>[(#NOM_SITE_SPIP|textebrut)][ - (#SLOGAN_SITE_SPIP|textebrut)]</title>
+	[<meta name="description" content="Résultats de la recherche pour '#RECHERCHE'" />]
+	<INCLURE{fond=include/css} />
+ 	<INCLURE{fond=include/header-scripts} />
+  </head>
+  <body>
+		<INCLURE{fond=include/barre-contact} />
+		<INCLURE{fond=include/menu} />
+		<INCLURE{fond=include/carousel} />
+		
+		<section id="plan" class="my-3">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+					<h1>Résultats de la recherche pour '#RECHERCHE'</h1>
+					<hr class="divider">
+					[(#REM) Articles trouvés]
+					<B_articles>
+					<div class="menu menu_articles">
+						<h2>#GRAND_TOTAL Articles trouvés</h2>
+						<ul>
+							<BOUCLE_articles(ARTICLES) {recherche} {!par points}>
+							<li><a href="#URL_ARTICLE">#TITRE</a> [#POINTS] <span class="plan-date">[(#DATE|affdate)]</span></li>
+							</BOUCLE_articles>
+						</ul>
+					</div>
+					</B_articles>
+				</div>
+			</div>
+		</section>
+		<INCLURE{fond=include/footer} />
+    	<INCLURE{fond=include/scripts} />
+  </body>
+</html>

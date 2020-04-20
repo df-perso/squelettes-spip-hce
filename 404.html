@@ -1,0 +1,41 @@
+#HTTP_HEADER{HTTP/1.0  #ENV{code,'404 Not Found'}}
+#HTTP_HEADER{"Cache-Control: no-store, no-cache, must-revalidate"}
+#HTTP_HEADER{Pragma: no-cache}
+<!doctype html>
+<html dir="#LANG_DIR" lang="#LANG">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><:pass_erreur:> [(#ENV{status, 404}|textebrut)] - [(#NOM_SITE_SPIP|textebrut)]</title>
+	<meta name="description" content="Aïe, une erreur s'est produite!" />
+	<INCLURE{fond=include/css} />
+ 	<INCLURE{fond=include/header-scripts} />
+  </head>
+  <body>
+		<INCLURE{fond=include/barre-contact} />
+		<INCLURE{fond=include/menu} />
+		
+		<section id="plan" class="my-3">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<h1><:pass_erreur:> [(#ENV{status, 404}|intval)]</h1>
+						[(#ENV{erreur}|non)
+						[(#ENV{fond_erreur}|=={article}|oui)<div class="chapo"><p><:aucun_article:></p></div>]
+						[(#ENV{fond_erreur}|=={rubrique}|oui)<div class="chapo"><p><:aucune_rubrique:></p></div>]
+						[(#ENV{fond_erreur}|=={breve}|oui)<div class="chapo"><p><:aucune_breve:></p></div>]
+						[(#ENV{fond_erreur}|=={auteur}|oui)<div class="chapo"><p><:aucun_auteur:></p></div>]
+						[(#ENV{fond_erreur}|=={site}|oui)<div class="chapo"><p><:aucun_site:></p></div>]
+						[(#ENV{fond_erreur}|=={forum}|oui)<div class="chapo"><p><:forum:aucun_message_forum:></p></div>]
+						]
+						[<div class="chapo"><p>(#ENV{erreur})</p></div>]
+						<div class="alert alert-danger"><h5>Ce contenu n'existe pas</h5><hr><p>Désolé, il semble que le contenu que vous recherchez n'existe pas. <a href="[(#URL_SITE_SPIP)]">Cliquez ici pour retourner à la page d'accueil</a>.</p></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<INCLURE{fond=include/footer} />
+    	<INCLURE{fond=include/scripts} />
+  </body>
+</html>
