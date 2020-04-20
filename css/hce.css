@@ -76,7 +76,7 @@ a.badge, a.badge:hover, a.badge:visited {
 
 
 #videos_section {
-	height: 18em;
+	height: 24em;
 	overflow: hidden;
 }
 .video-div {
@@ -96,7 +96,7 @@ a.badge, a.badge:hover, a.badge:visited {
     height: 20rem;
   }
   #videos_section {
-	height: 28rem;
+	height: 33rem;
   }
 }
 .video-div img {
@@ -170,6 +170,33 @@ span.spip_documents img {
 }
 .alert .h5 {
 	font-weight: bold;
+}
+#portfolio {
+	width: 100%;
+	height: 20rem;
+	overflow: hidden;
+}
+#portfolio-container {
+	width: 150%;
+	height: 20rem;
+}
+.portfolio-image {
+	height: 10rem;
+	border-right: 4px #fff solid;
+	border-bottom: 4px #fff solid;
+	cursor: pointer;
+}
+@media (min-width: 768px) {
+  #portfolio {
+    height: 40rem;
+  }
+  #portfolio-container {
+	height: 40rem;
+	width: 120%;
+  }
+  .portfolio-image {
+  	height: 20rem;
+  }
 }
 /***************** scroll to top button *******/
 .back-to-top {

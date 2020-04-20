@@ -1,0 +1,6 @@
+<section id="portfolio">
+<div id="portfolio-container">
+[(#REM) Aucun espace dans la triple boucle ci-dessous]
+<BOUCLE_documents(DOCUMENTS){extension==jpg|png|gif}{paysage}{hauteur > 400}{par hasard} {0, 20}><BOUCLE_lien_article(spip_documents_liens){id_document}{objet=article}><BOUCLE_article(ARTICLES){id_article=#ID_OBJET}><a href="#URL_ARTICLE"><img src="#URL_DOCUMENT" class="portfolio-image" title="[(#TITRE|attribut_html)] - [(#DATE|affdate)]" alt="[(#TITRE|attribut_html)] - [(#DATE|affdate)]"></a></BOUCLE_article></BOUCLE_lien_article></BOUCLE_documents>
+</div>
+</section>
