@@ -50,13 +50,13 @@ $(document).ready(function() {
 				{
 					clearTimeout(window.iContactSlideUp);
 				}
-				window.iContactSlideUp = setTimeout(function() { $('#barre_contact').css('height', 0); }, 200);
+				window.iContactSlideUp = setTimeout(function() { $('#barre_contact').css('height', 0); $('#top-logo').css('opacity', 0); $('#top-logo-small').removeClass('shown'); }, 200);
 			} else {
 				if (window.iContactSlideDown !== null)
 				{
 					clearTimeout(window.iContactSlideDown);
 				}
-				window.iContactSlideDown = setTimeout(function() { $('#barre_contact').css('height', window.iBarreContactHeight);  }, 200);
+				window.iContactSlideDown = setTimeout(function() { $('#barre_contact').css('height', window.iBarreContactHeight); $('#top-logo').css('opacity', 1); $('#top-logo-small').addClass('shown');}, 200);
 			}
 		});
 		// scroll body to 0px on click

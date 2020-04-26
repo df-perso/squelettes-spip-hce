@@ -1,0 +1,42 @@
+#SET{rubrique_labels, #ARRAY{2,"Présentation de Handi Cap Evasion", 7, "Tous les reportages", 23, "Les nouveaux projets"}}
+
+<section id="menu_section">
+<div class="container" id="menu_container">
+<nav class="navbar navbar-expand-lg">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon fas fa-bars"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    	<BOUCLE_nav(RUBRIQUES) {racine} {par num titre, titre}>
+		<B_subnav>
+		<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#TITRE</a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="#URL_RUBRIQUE">[(#GET{rubrique_labels}|table_valeur{#ID_RUBRIQUE})]</a>
+	   	<BOUCLE_subnav(RUBRIQUES) {id_parent} {par num titre, titre}>
+				<a class="dropdown-item" href="#URL_RUBRIQUE">#TITRE</a>
+		</BOUCLE_subnav>
+			</div>
+		</li>
+		</B_subnav>
+		<li class="nav-item">
+			<a class="nav-link" href="#URL_RUBRIQUE">#TITRE</a>
+		</li>
+		<//B_subnav>
+		</BOUCLE_nav>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" action="#URL_SITE_SPIP/spip.php?page=recherche" method="post">
+		<div class="input-group input-group-sm">
+		  <input type="text" class="form-control" placeholder="Votre recherche" name="recherche" autocapitalize="off" autocorrect="off" aria-label="Rechercher sur le site" aria-describedby="button-search">
+		  <div class="input-group-append" id="button-search">
+		    <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search" title="Rechercher"></i></button>
+		  </div>
+		</div>
+    </form>
+    <a href="#URL_SITE_SPIP?page=plan" class="text-secondary"><i class="fas fa-lg fa-compass ml-3" title="Plan du site"></i></a>
+  </div>
+</nav>
+</div><!-- #menu_container -->
+</section>

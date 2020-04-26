@@ -13,7 +13,6 @@
 		<INCLURE{fond=include/navigation} />
 		<INCLURE{fond=include/carousel} />
 	    <INCLURE{fond=include/breves} {id_rubrique=1} />
-		<INCLURE{fond=include/engagement} />		
 		<section id="sommaire_articles_recents" class="my-3">
 		<div class="container">
 		<h1>En ce moment</h1>
@@ -30,23 +29,12 @@
 		</B_articles>
 		</div>
 		</section>
-		
+		<INCLURE{fond=include/articles-alternes} {id_rubrique=1}/>		
 		<INCLURE{fond=include/youtube-videos} />			
 		<INCLURE{fond=include/compte-rendus-sejours} />
-
-		<INCLURE{fond=include/portfolio} />		
-		<section id="sommaire_article_details" class="my-5">
-			<div class="container">
-			<h1>A propos de Handi Cap Evasion</h1>
-			<hr class="divider">
-			<div class="row my-3">
-				<div class="col">
-					<INCLURE{fond=include/article-details, id_article=6} /><!--  présentation de HCE -->
-				</div>
-			</div>
-		</section> <!-- #sommaire_article_details -->
-		
+		<INCLURE{fond=include/engagement} />		
 		<INCLURE{fond=include/partenaires} />
+		<INCLURE{fond=include/portfolio} />
 		<INCLURE{fond=include/footer} />
     	<INCLURE{fond=include/scripts} />
   </body>
