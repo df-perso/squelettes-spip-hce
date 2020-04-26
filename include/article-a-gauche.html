@@ -1,0 +1,19 @@
+<BOUCLE_article(ARTICLES) {id_article}>
+<div class="row align-items-center article-a-gauche">
+<div class="col-md-6 col-xs-12">
+<div class="row"><div class="offset-md-5 p-4"><h3>[(#TITRE)]</h3><hr>[(#TEXTE)]</div></div>
+</div>
+<div class="col-md-6 col-xs-12 p-0">
+<B_image_poster>
+<BOUCLE_image_poster(DOCUMENTS) {id_article} {0,1} {titre=poster}>
+<div class="cover-y25"><img src="#URL_DOCUMENT"></div>
+</BOUCLE_image_poster>
+<BOUCLE_image(DOCUMENTS) {id_article} {0,1} {extension==jpg}>
+<div class="cover-y25"><img src="#URL_DOCUMENT"></div>
+</BOUCLE_image>
+</B_image>
+<//B_image>
+<//B_image_poster>
+</div>
+</div>
+</BOUCLE_article>

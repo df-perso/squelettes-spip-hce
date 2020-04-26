@@ -1,0 +1,14 @@
+<section id="articles_alternes" class="my-3">
+<div class="container-fluid" id="articles_alternes_container">
+<h1>A propos de Handi Cap Evasion</h1>
+<hr class="divider">
+<div class="dark-background">
+<BOUCLE_postit(MOTS) {titre=PostIt}>
+	<BOUCLE_articles_postit(ARTICLES) {id_rubrique} {id_mot} {par date}>
+ 	[(#COMPTEUR_BOUCLE|modulo{2}|oui)<INCLURE{fond=include/article-a-gauche}{id_article}>]
+ 	[(#COMPTEUR_BOUCLE|modulo{2}|non)<INCLURE{fond=include/article-a-droite}{id_article}>]
+	</BOUCLE_articles_postit>
+</BOUCLE_postit>
+</div>
+</div>
+</section>
