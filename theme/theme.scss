@@ -1,0 +1,113 @@
+// Variables overrides
+
+/*
+//Theme 1: Gravel Road in Namibia: https://stock.adobe.com/fr//304486263/
+$theme-colors: (
+  "primary": #0477BF,
+  "secondary": #048ABF,
+  "danger": #F2A03D,
+  "info": #04B2D9,
+  "dark": #D97C2B
+);
+*/
+
+/*
+// Theme 2: Rhyolite volcanic mountain Landmannalaugar: https://stock.adobe.com//301821492/
+$theme-colors: (
+  "primary": #7693A6,
+  "secondary": #8C6D11,
+  "danger": #8C0F26,
+  "info": #8C4A32,
+  "dark": #088C8C
+);
+*/
+
+$theme: (
+	"gravel-road": (
+		"primary": #0477BF,
+		"secondary": #048ABF,
+		"danger": #F2A03D,
+		"info": #04B2D9,
+		"dark": #D97C2B
+	),
+	"rhyolite": (
+		"primary": #7693A6,
+		"secondary": #8C6D11,
+		"danger": #8C0F26,
+		"info": #8C4A32,
+		"dark": #088C8C
+	),
+	"colorful": (
+		"primary": #49C2F2,
+		"secondary": #F2D8C9,
+		"danger": #F21D2F,
+		"info": #F2D64B,
+		"dark": #A66844
+	),
+	"green-and-blue": (
+		"primary": #0367A6,
+		"secondary": #49B1F2,
+		"danger": #F21D2F,
+		"info": #7F8C1C,
+		"dark": #027373
+	),
+	"muddy": (
+		"primary": #006B60,
+		"secondary": #D98E04,
+		"danger": #A8004F,
+		"info": #C97900,
+		"dark": #006B60
+	),
+	"mountain-sunset": (
+		"primary": #F29F05,
+		"secondary": #F29F05,
+		"danger": #F2B705,
+		"info": #F25C05,
+		"dark": #495F8C
+	)
+);
+
+$selected-theme: muddy;
+
+$theme-colors: (
+  "primary": map_get(map_get($theme, $selected-theme), 'primary'),
+  "secondary": map_get(map_get($theme, $selected-theme), 'secondary'),
+  "danger": map_get(map_get($theme, $selected-theme), 'danger'),
+  "info": map_get(map_get($theme, $selected-theme), 'info'),
+  "dark":map_get(map_get($theme, $selected-theme), 'dark')
+);
+
+@each $key, $map in $theme {	
+	#theme-selector-#{$key} .primary {
+		background-color:   map_get($map, 'primary');
+	}	
+	#theme-selector-#{$key} .secondary {
+		background-color:   map_get($map, 'secondary');
+	}	
+	#theme-selector-#{$key} .danger {
+		background-color:   map_get($map, 'danger');
+	}	
+	#theme-selector-#{$key} .info {
+		background-color:   map_get($map, 'info');
+	}	
+	#theme-selector-#{$key} .dark {
+		background-color:   map_get($map, 'dark');
+	}	
+};
+
+.theme-selector {
+	padding: 2px;
+}
+.theme-selector:hover {
+	background-color: #111;
+	color: #fff;
+}
+.theme-selector .fa-check {
+	display: none;
+}
+#theme-selector-#{$selected-theme} .fa-check {
+	display: inline-block;
+}
+
+@import "./bootstrap-4.4.1/scss/bootstrap.scss";
+

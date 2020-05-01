@@ -13,7 +13,7 @@ a, a:hover, a:visited {
 	color: #000;
 }
 .dark-background {
-	background-color: #3a4175;
+	background-color: var(--dark);
 	color: #fff;
 }
 .dark-background a, .dark-background a:hover, .dark-background a:visited {
