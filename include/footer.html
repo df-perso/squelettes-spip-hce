@@ -1,4 +1,4 @@
-<section id="footer_section" class="dark-background py-3">
+<section id="footer_section" class="bg-dark text-white py-3">
 <div class="container" id="footer_container">
 	<div class="row">
 		<div class="col-md-3 mb-3">
@@ -50,13 +50,45 @@ $(document).ready(function() {
 				{
 					clearTimeout(window.iContactSlideUp);
 				}
-				window.iContactSlideUp = setTimeout(function() { $('#barre_contact').css('height', 0); $('#top-logo').css('opacity', 0); $('#top-logo-small').removeClass('shown'); }, 200);
-			} else {
 				if (window.iContactSlideDown !== null)
 				{
 					clearTimeout(window.iContactSlideDown);
 				}
-				window.iContactSlideDown = setTimeout(function() { $('#barre_contact').css('height', window.iBarreContactHeight); $('#top-logo').css('opacity', 1); $('#top-logo-small').addClass('shown');}, 200);
+				window.iContactSlideUp = setTimeout(function() {
+					var h = $('#barre_contact').height();
+					$('#barre_contact').css({opacity: 1, height: h});
+					setTimeout(function() {
+						$('#barre_contact').css({opacity: 1, height: 0});
+					}, 100);
+					$('#top-logo').css('opacity', 0);
+					$('#top-logo-small').removeClass('shown');
+				}, 200);
+			}
+			else
+			{
+				console.log("scrollTop: "+$(this).scrollTop());
+				if (window.iContactSlideUp !== null)
+				{
+					clearTimeout(window.iContactSlideUp);
+				}
+				if (window.iContactSlideDown !== null)
+				{
+					clearTimeout(window.iContactSlideDown);
+				}
+				window.iContactSlideDown = setTimeout(function() {
+					// 1) Compute the actual height (without showing the div)
+					$('#barre_contact').css({opacity: 0, height: 'auto'});
+					var h = $('#barre_contact').height();
+					$('#barre_contact').css({opacity: 1, height: 0});
+					// 2) Show the div using the animation
+					setTimeout(function() {
+						$('#barre_contact').css({opacity: 1, height: h});
+						setTimeout(function() {
+							$('#barre_contact').css({opacity: 1, height: 'auto'}); // In case the window get resized later on
+						}, 600);
+					}, 100);
+					$('#top-logo').css('opacity', 1); $('#top-logo-small').addClass('shown');
+				}, 200);
 			}
 		});
 		// scroll body to 0px on click
