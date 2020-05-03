@@ -27,7 +27,7 @@ $theme: (
 		"primary": #0477BF,
 		"secondary": #048ABF,
 		"danger": #F2A03D,
-		"info": #04B2D9,
+		"info": #0477BF,
 		"dark": #D97C2B
 	),
 	"rhyolite": (
@@ -76,6 +76,9 @@ $theme-colors: (
   "info": map_get(map_get($theme, $selected-theme), 'info'),
   "dark":map_get(map_get($theme, $selected-theme), 'dark')
 );
+
+$navbar-dark-color: rgba(255, 255, 255, .85);
+$navbar-dark-hover-color: white;
 
 @each $key, $map in $theme {	
 	#theme-selector-#{$key} .primary {
