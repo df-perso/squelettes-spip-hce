@@ -114,3 +114,37 @@ $navbar-dark-hover-color: white;
 
 @import "./bootstrap-4.4.1/scss/bootstrap.scss";
 
+table.spip {
+  width: 100%;
+  margin-bottom: $spacer;
+  color: $table-color;
+  background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+
+  tr:first-child { // Simulate a thead with the first line since Spîp does not seem to generate it
+    td  {
+      color: $table-dark-color;
+      background-color: $table-dark-bg;
+      border-color: $table-dark-border-color;
+      a, a:hover, a:visited {
+        color: $table-dark-color;
+      }
+    }
+  }
+  th,
+  td {
+    padding: $table-cell-padding;
+    vertical-align: top;
+    border-top: $table-border-width solid $table-border-color;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  tbody + tbody {
+    border-top: (2 * $table-border-width) solid $table-border-color;
+  }
+}
+
+

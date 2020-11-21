@@ -6131,3 +6131,23 @@ a.close.disabled {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
+
+table.spip {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529; }
+  table.spip tr:first-child td {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #454d55; }
+    table.spip tr:first-child td a, table.spip tr:first-child td a:hover, table.spip tr:first-child td a:visited {
+      color: #fff; }
+  table.spip th, table.spip td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6; }
+  table.spip thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6; }
+  table.spip tbody + tbody {
+    border-top: 2px solid #dee2e6; }
