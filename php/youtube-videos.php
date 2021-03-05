@@ -40,8 +40,7 @@ for ($i = 0; $i < MAX_RESULTS; $i++)
     echo '</div>'; 
     echo '<div class="video-info">';
 	echo '<div class="video-title">'.$title.'</div>';
-    echo '<div class="video-description"'.$description.'</div>';
-    echo '</div>';
+    echo '<div class="video-description">'.$description.'</div>';
     echo '</div>';
     echo '</div>';
 }
