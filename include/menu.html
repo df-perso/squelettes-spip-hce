@@ -10,20 +10,10 @@
 		<li class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">L'association</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=2">A propos de Handi Cap Evasion</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=9">Antenne d’Anjou</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=12">Antenne d’Auvergne</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=17">Antenne de Cornouaille</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=26">Antenne de l’Ain</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=31">Antenne de l’Ardèche</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=18">Antenne de la Loire</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=11">Antenne de Picardie</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=13">Antenne du Rhône</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=10">Antenne Grand Est</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=19">Antenne Montpellier-Nimes</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=28">Antenne Nantes-Atlantique</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=15">Handi Cap Evasion 38</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=16">Handi Cap Evasion Provence</a>
+			<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=2">A propos de Handi Cap Evasion</a>
+	   		<BOUCLE_subnav1(RUBRIQUES) {id_parent=2} {par num titre, titre}>
+				<a class="dropdown-item" href="#URL_RUBRIQUE">#TITRE</a>
+			</BOUCLE_subnav1>
 			</div>
 		</li>				
 		<li class="nav-item">
@@ -32,32 +22,26 @@
 		<li class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Les activités</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="sejours">Les séjours</a>
-				<a class="dropdown-item" href="#">Les randonnées locales</a>
+				<a class="dropdown-item" href="#URL_SITE_SPIP/sejours">Les séjours</a>
+				<a class="dropdown-item" href="#URL_SITE_SPIP/Les-randonnees-locales.html">Les randonnées locales</a>
 			</div>
 		</li>				
 		<li class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reportages</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=7">Tous les reportages</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=14">Archives</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=4">La GTA</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=24">La GTV</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=27">Le GTB</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=37">Madagascar 2019</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=29">Népal 2011</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=25">Pérou 2008</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=30">Pérou 2011</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=32">Pérou 2015</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=22">20 ans</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=33">30 sommets pour les 30 ans</a>
+		   		<BOUCLE_subnav2(RUBRIQUES) {id_parent=7} {par num titre, titre}>
+					<a class="dropdown-item" href="#URL_RUBRIQUE">#TITRE</a>
+				</BOUCLE_subnav2>
 			</div>
 		</li>
 		<li class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Les projets</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=23">Les nouveaux projets</a>
-				<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=36">Pérou 2021</a>
+			<a class="dropdown-item" href="spip.php?page=rubrique&amp;id_rubrique=23">Les derniers projets</a>
+	   		<BOUCLE_subnav3(RUBRIQUES) {id_parent=23} {par num titre, titre}>
+				<a class="dropdown-item" href="#URL_RUBRIQUE">#TITRE</a>
+			</BOUCLE_subnav3>
 			</div>
 		</li>
 		<li class="nav-item">

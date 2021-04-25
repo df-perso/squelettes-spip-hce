@@ -1,0 +1,27 @@
+<!doctype html>
+<html dir="#LANG_DIR" lang="#LANG">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>[(#NOM_SITE_SPIP|textebrut)][ - (#SLOGAN_SITE_SPIP|textebrut)]</title>
+	[<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|couper{150}|attribut_html)" />]
+	<INCLURE{fond=include/css} />
+ 	<INCLURE{fond=include/header-scripts} />
+  </head>
+  <body>
+		<INCLURE{fond=include/navigation} />
+		<INCLURE{fond=include/poster-banner} {image=banniere_sejours}/>
+		<INCLURE{fond=include/breves} {id_rubrique=20} />																																																													
+
+		<INCLURE{fond=include/articles-postit}{id_rubrique} />
+
+		<INCLURE{fond=include/engagement} />
+		<div class="my-3">
+		<INCLURE{fond=include/youtube-videos} />
+		</div>
+		<INCLURE{fond=include/portfolio} />		
+		<INCLURE{fond=include/footer} />
+    	<INCLURE{fond=include/scripts} />
+  </body>
+</html>
