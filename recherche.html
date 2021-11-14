@@ -13,19 +13,40 @@
 		<INCLURE{fond=include/barre-contact} />
 		<INCLURE{fond=include/menu} />
 		<INCLURE{fond=include/carousel} />
+
+		#SET{en-tete, Résultats de la recherche pour '#RECHERCHE'}
+		<B_mots>
+		<BOUCLE_mots(MOTS){titre=(#RECHERCHE|replace{' ',''})}>
+		#SET{en-tete, Autres résultats de recherche pour '#RECHERCHE'}
+		<section id="sommaire_articles_recents" class="my-3">
+		<div class="container">
+		<h1>#RECHERCHE</h1>
+		<hr class="divider">
+		<B_articlesParMotCle>
+		<div class="row my-3" id="compte_rendu_sejours">
+			<BOUCLE_articlesParMotCle(ARTICLES) {!par date} {id_mot} {doublons}>
+				<div class="col-lg-4 col-md-6 col-sm-12 my-2">
+				<INCLURE{fond=include/article-card, id_article, show_rubrique=hide} />
+				</div>
+			</BOUCLE_articlesParMotCle>	
+		</div>
+		</B_articlesParMotCle>
+		</section>
+		</BOUCLE_mots>
+		</B_mots>
 		
 		<section id="plan" class="my-3">
 			<div class="container">
 				<div class="row">
 					<div class="col">
-					<h1>Résultats de la recherche pour '#RECHERCHE'</h1>
+					<h1>#GET{en-tete}</h1>
 					<hr class="divider">
 					[(#REM) Articles trouvés]
 					<B_articles>
 					<div class="menu menu_articles">
 						<h2>#GRAND_TOTAL Articles trouvés</h2>
 						<ul>
-							<BOUCLE_articles(ARTICLES) {recherche} {!par points}>
+							<BOUCLE_articles(ARTICLES) {recherche} {!par points} {doublons}>
 							<li><a href="#URL_ARTICLE">#TITRE</a> [#POINTS] <span class="plan-date">[(#DATE|affdate)]</span></li>
 							</BOUCLE_articles>
 						</ul>
