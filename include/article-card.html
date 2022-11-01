@@ -2,13 +2,13 @@
 <div class="card shadow">
 	<B_image_poster>
 	<BOUCLE_image_poster(DOCUMENTS) {id_article} {0,1} {titre=poster}>
-	<div class="card-img-top"><a href="#URL_ARTICLE">[(#FICHIER|image_reduire{400,300})]</a></div>
+	<div class="card-img-top"><a href="#URL_ARTICLE">[(#FICHIER|image_reduire{400,0})]</a></div>
 	</BOUCLE_image_poster>
 	<BOUCLE_image(DOCUMENTS) {id_article} {0,1} {extension==jpg|png|gif}>
-	<div class="card-img-top"><a href="#URL_ARTICLE">[(#FICHIER|image_reduire{400,300})]</a></div>
+	<div class="card-img-top"><a href="#URL_ARTICLE">[(#FICHIER|image_reduire{400,0})]</a></div>
 	</BOUCLE_image>
 	</B_image>
-	<div class="card-img-top"><a href="#URL_ARTICLE">[(#LOGO_ARTICLE_RUBRIQUE|image_reduire{400,300})]</a></div>
+	<div class="card-img-top"><a href="#URL_ARTICLE">[(#LOGO_ARTICLE_RUBRIQUE|image_reduire{400,0})]</a></div>
 	<//B_image>
 	<//B_image_poster>
 	<div class="card-body">
