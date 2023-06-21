@@ -1,0 +1,40 @@
+<!doctype html>
+<html dir="#LANG_DIR" lang="#LANG">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>[(#NOM_SITE_SPIP|textebrut)][ - (#SLOGAN_SITE_SPIP|textebrut)]</title>
+	[<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|couper{150}|attribut_html)" />]
+	<INCLURE{fond=include/css} />
+ 	<INCLURE{fond=include/header-scripts} />
+  </head>
+  <body>
+		<INCLURE{fond=include/navigation} />
+		<INCLURE{fond=include/poster-banner} {image=banniere_joelette}/>
+		
+		<B_mots>
+		<BOUCLE_mots(MOTS){titre=(#ENV{keyword}|replace{' ',''})}>
+		<section id="sommaire_articles_recents" class="my-3">
+		<div class="container">
+		<h1>#ENV{keyword}</h1>
+		<hr class="divider">
+		<B_articlesParMotCle>
+		<div class="row my-3" id="compte_rendu_sejours">
+			<BOUCLE_articlesParMotCle(ARTICLES) {!par date} {id_mot}>
+				<div class="col-lg-4 col-md-6 col-sm-12 my-2">
+				<INCLURE{fond=include/article-card, id_article, show_rubrique=hide} />
+				</div>
+			</BOUCLE_articlesParMotCle>	
+		</div>
+		</B_articlesParMotCle>
+		</section>
+		</BOUCLE_mots>
+		</B_mots>
+		
+		<INCLURE{fond=include/engagement} />
+
+		<INCLURE{fond=include/footer} />	
+    	<INCLURE{fond=include/scripts} />
+  </body>
+</html>

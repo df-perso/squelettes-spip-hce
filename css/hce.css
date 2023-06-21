@@ -19,8 +19,6 @@ a.badge, a.badge:hover, a.badge:visited {
 	color: white;
 }
 .logo-hce {
-	background-color: #fff;
-	border: 0.5rem #fff solid;
 	width: 8rem;
 	height: 8rem;
 }
@@ -53,8 +51,6 @@ a.badge, a.badge:hover, a.badge:visited {
 	top: 5rem;
 	left: 1rem;
 	width: 4.5rem;
-	transform: rotate(-4deg);
-	box-shadow: 0px 0px 5px 2px rgba(17,17,17,0.5);
 }
 .poster-banner {
 	width: 100%;
