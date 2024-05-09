@@ -1,5 +1,5 @@
 <BOUCLE_articles(ARTICLES) {id_article}>
-	<h2>#TITRE</h2>
+	<h[(#ENV{taille-titre, 2})]>#TITRE</h[(#ENV{taille-titre, 2})]>
 	<div class="font-weight-light">
 	<BOUCLE_rubrik(RUBRIQUES) {si #ENV{show_rubrique}|=={show}} {id_rubrique=#ID_RUBRIQUE}>
 	[(#DATE|affdate_court)] <a href="#URL_RUBRIQUE" class="badge badge-dark float-right">#TITRE</a>

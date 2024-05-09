@@ -14,27 +14,38 @@
 		<INCLURE{fond=include/poster-banner} {image=banniere_association}/>
 		<INCLURE{fond=include/breves}{id_rubrique} />
 		
-		<INCLURE{fond=include/articles-postit}{id_rubrique} />  
-		<section id="sommaire_articles_recents" class="my-3">
+		<INCLURE{fond=include/engagement} {background=primary} />
+		
+		<section id="article">
 		<div class="container">
-		<h1>En ce moment</h1>
+		<div class="row my-3">
+			<div class="col">
+			<INCLURE{fond=include/article-details} {id_article=1252} {taille-titre=1}>
+			</div>
+		</div>
+		</div>
+		</section><!-- #article -->	
+		<hr class="divider">	
+		<div class="my-4"></div>
+		<INCLURE{fond=include/articles-alternes-par-id} {articles=28;1249;1263} {titre=En savoir plus}/>
+		<div class="my-4"></div>
+
+		<section id="association_articles_recents" class="my-3">
+		<div class="container">
+		<h1>Dernières informations</h1>
 		<hr class="divider">																																																											
 		<B_articles>
 		<div class="row my-3" id="articles_recents">
-			<BOUCLE_articles(ARTICLES) {id_rubrique} {!par date} {pagination 6}>
+			<BOUCLE_articles(ARTICLES) {!par date} {pagination 6}>
 				<div class="col-lg-4 col-md-6 col-sm-12 my-2">
-				<INCLURE{fond=include/article-card, id_article} />
+				<INCLURE{fond=include/article-card, id_article, show_rubrique=show} />
 				</div>
 			</BOUCLE_articles>																																										
 		</div>
-		<button type="button" class="btn btn-primary btn-block" onclick="ShowMore(this, {id_rubrique: [(#ID_RUBRIQUE)]})" data-start="0" data-length="6" data-total="#GRAND_TOTAL" data-target-selector="#articles_recents" data-page="ajax-rubrique-articles-recents"><span><i class="fas fa-fw fa-arrow-right"></i>Voir plus d'articles</span></button>
+		<button type="button" class="btn btn-primary btn-block" onclick="ShowMore(this)" data-start="0" data-length="6" data-total="#GRAND_TOTAL" data-target-selector="#articles_recents" data-page="ajax-articles-recents"><span><i class="fas fa-fw fa-arrow-right"></i>Voir plus d'articles</span></button>
 		</B_articles>
-		</div><!-- container -->
+		</div>
 		</section>
-		
-		<INCLURE{fond=include/engagement} />
-
-		<INCLURE{fond=include/historique} />
 
 		<INCLURE{fond=include/youtube-videos} />
 		

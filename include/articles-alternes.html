@@ -1,7 +1,6 @@
-<section id="articles_alternes" class="my-3">
+<section id="articles_alternes">
 <div class="container-fluid" id="articles_alternes_container">
-<h1>A propos de Handi Cap Evasion</h1>
-<hr class="divider">
+<h1>[(#ENV{titre, A propos de Handi Cap Evasion})]</h1>
 <BOUCLE_postit(MOTS) {titre=PostIt}>
 	<BOUCLE_articles_postit(ARTICLES) {id_rubrique} {id_mot} {par date}>
  	[(#COMPTEUR_BOUCLE|modulo{2}|oui)<INCLURE{fond=include/article-a-gauche}{id_article}>]

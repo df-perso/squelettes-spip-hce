@@ -1,6 +1,22 @@
-<BOUCLE_article(ARTICLES) {id_article=#ENV{article}}>
-<a href="[(#URL_ARTICLE)]" class="btn btn-info"><i class="fas fa-fw fa-arrow-right"></i> [(#ENV{label})]</a>
-</BOUCLE_article>
-<BOUCLE_rubrique(RUBRIQUES) {id_rubrique=#ENV{rubrique}}>
-<a href="[(#URL_RUBRIQUE)]" class="btn btn-info"><i class="fas fa-fw fa-arrow-right"></i> [(#ENV{label})]</a>
-</BOUCLE_rubrique>
+<BOUCLE_testArticle(CONDITION){si #ENV{article}}>
+	<BOUCLE_article(ARTICLES) {id_article=#ENV{article}}>
+	<a href="[(#URL_ARTICLE)]" class="btn btn-info"><i class="fas fa-fw fa-arrow-right"></i> [(#ENV{label})]</a>
+	</BOUCLE_article>
+</BOUCLE_testArticle>
+<BOUCLE_testRubrique(CONDITION){si #ENV{rubrique}}>
+	<BOUCLE_rubrique(RUBRIQUES) {id_rubrique=#ENV{rubrique}}>
+	<a href="[(#URL_RUBRIQUE)]" class="btn btn-info"><i class="fas fa-fw fa-arrow-right"></i> [(#ENV{label})]</a>
+	</BOUCLE_rubrique>
+</BOUCLE_testRubrique>
+<BOUCLE_testDocument(CONDITION){si #ENV{document}}>
+	<BOUCLE_document(DOCUMENTS) {id_document=#ENV{document}}>
+	<a href="[(#URL_DOCUMENT)]" class="btn btn-info"><i class="fas fa-fw fa-arrow-right"></i> [(#ENV{label})]</a>
+	</BOUCLE_document>
+</BOUCLE_testDocument>
+<BOUCLE_testUrl(CONDITION){si #ENV{url}}>
+	<a href="[(#ENV{url})]" class="btn btn-info"><i class="fas fa-fw fa-arrow-right"></i> [(#ENV{label})]</a>
+</BOUCLE_testUrl>
+<//B_testUrl>
+<//B_testDocument>
+<//B_testRubrique>
+<//B_testArticle>
