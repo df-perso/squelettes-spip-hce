@@ -143,12 +143,12 @@ HTML;
             if ($sPJRegistrationDate > $sNow)
             {
                 $sNiceDate = DBService::FormatDate($sPJRegistrationDate);
-                echo "<p><strong>Pour les passagers joëlette</strong> et <strong>pour les accompagnateurs actifs des séjours à l'étranger</strong> les inscriptions seront ouvertes à partir du $sNiceDate.</p>";
+                echo "<p><strong>Pour les passagers joëlette</strong> et <strong>pour les accompagnateurs actifs des séjours à l'étranger</strong> les inscriptions seront traitées à partir du $sNiceDate (mais vous pouvez envoyer votre inscription un peu avant).</p>";
             }
             if ($sAARegistrationDate > $sNow)
             {
                 $sNiceDate = DBService::FormatDate($sAARegistrationDate);
-                echo "<p><strong>Pour les accompagnateurs actifs</strong> des autres séjours les inscriptions seront ouvertes à partir du $sNiceDate.</p>";
+                echo "<p><strong>Pour les accompagnateurs actifs</strong> des autres séjours les inscriptions seront traitées à partir du $sNiceDate (mais vous pouvez envoyer votre inscription un peu avant).</p>";
             }
             echo
 <<<HTML
