@@ -4,7 +4,7 @@
     [(#SET{mot_clef_cr,'xxx'})]
     <BOUCLE_mots_clefs(MOTS) {id_groupe=2} {par titre} {inverse} {0,3}>
         [(#SET{mot_courant,#TITRE})]
-    	<BOUCLE_articles_du_mot(ARTICLES) {id_mot}> [(#REM) les espaces sont importants le contenu de la boucle ne peut pas être vide] </BOUCLE_articles_du_mot>[(#SET{total_articles,#TOTAL_BOUCLE})]<BOUCLE_test(CONDITION){si #GET{total_articles}|>{3}|et {#GET{mot_clef_cr}|==={'xxx'}}}> [(#SET{mot_clef_cr,#GET{'mot_courant'}})]</BOUCLE_test></B_articles_du_mot>
+    	<BOUCLE_articles_du_mot(ARTICLES) {id_mot}> [(#REM) les espaces sont importants le contenu de la boucle ne peut pas être vide] </BOUCLE_articles_du_mot>[(#SET{total_articles,#TOTAL_BOUCLE})]<BOUCLE_test(CONDITION){si #GET{total_articles}|>={3}|et {#GET{mot_clef_cr}|==={'xxx'}}}> [(#SET{mot_clef_cr,#GET{'mot_courant'}})]</BOUCLE_test></B_articles_du_mot>
     </BOUCLE_mots_clefs>
     <!--  Mot clef: (#GET{mot_clef_cr}) -->
 <h1>Récits des séjours [(#GET{mot_clef_cr}|match{20\d\d})]</h1>
